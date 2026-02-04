@@ -1,0 +1,12 @@
+.icon-circulo {
+  width: 140px;
+  height: 140px;
+}
+
+.tarjeta_uno {
+    background-color: rgb(108, 108, 220);
+
+      border-radius: 15px; /* Redondea las cuatro esquinas */
+  border: 1px solid #ccc; /* Opcional: añade un borde visible */
+  padding: 20px;
+}
