@@ -1,5 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+
 <head>
+    <meta charset="UTF-8">
+    <title>DevSite</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/segundo.css">
 </head>
-<h2>aaaaa</h2>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="main-header">
+        <nav class="navbar navbar-expand-lg navbar-dark container py-3">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="fa-solid fa-layer-group"></i> DevSite
+            </a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Portafolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <section class="hero text-white text-center">
+            <div class="container">
+                <h1 class="display-4 fw-bold">Creamos Experiencias Digitales</h1>
+                <p class="lead mt-3">
+                    Desarrollo web moderno, escalable y profesional
+                </p>
+                <a href="#" class="btn btn-warning btn-lg mt-4">
+                    <i class="fa-solid fa-paper-plane"></i> Contáctanos
+                </a>
+            </div>
+        </section>
+    </header>
+
+    <!-- ABOUT -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="fw-bold">Sobre Nosotros</h2>
+                    <p class="text-muted mt-3">
+                        Somos un equipo apasionado por la tecnología, el diseño y la
+                        creación de soluciones digitales que generan impacto real.
+                    </p>
+                    <p>
+                        Utilizamos tecnologías modernas, buenas prácticas y
+                        arquitectura limpia para crear productos escalables.
+                    </p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <i class="fa-solid fa-users fa-8x text-primary"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Servicios</h2>
+                <p class="text-muted">Lo que hacemos mejor</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <div class="card-body text-center">
+                            <i class="fa-solid fa-code fa-3x text-primary mb-3"></i>
+                            <h5>Desarrollo Web</h5>
+                            <p>Aplicaciones modernas con alto rendimiento.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <div class="card-body text-center">
+                            <i class="fa-solid fa-server fa-3x text-success mb-3"></i>
+                            <h5>Backend & APIs</h5>
+                            <p>Arquitecturas limpias y escalables.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <div class="card-body text-center">
+                            <i class="fa-solid fa-lock fa-3x text-danger mb-3"></i>
+                            <h5>Seguridad</h5>
+                            <p>Protección de datos y buenas prácticas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats-section text-white text-center">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <h2 class="fw-bold">120+</h2>
+                    <p>Proyectos</p>
+                </div>
+                <div class="col-md-3">
+                    <h2 class="fw-bold">50+</h2>
+                    <p>Clientes</p>
+                </div>
+                <div class="col-md-3">
+                    <h2 class="fw-bold">8</h2>
+                    <p>Años Experiencia</p>
+                </div>
+                <div class="col-md-3">
+                    <h2 class="fw-bold">24/7</h2>
+                    <p>Soporte</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Portafolio</h2>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card portfolio-card"></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card portfolio-card"></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card portfolio-card"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section text-center text-white">
+        <div class="container">
+            <h2 class="fw-bold">¿Listo para empezar?</h2>
+            <p class="lead">Lleva tu idea al siguiente nivel</p>
+            <a href="#" class="btn btn-outline-light btn-lg">
+                <i class="fa-solid fa-rocket"></i> Empezar ahora
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer text-white">
+        <div class="container py-5 text-center">
+            <h5 class="fw-bold">DevSite</h5>
+            <p class="small">Tecnología con propósito</p>
+
+            <div class="mt-3">
+                <a class="footer-icon" href="#"><i class="fab fa-github"></i></a>
+                <a class="footer-icon" href="#"><i class="fab fa-linkedin"></i></a>
+                <a class="footer-icon" href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+
+            <hr class="border-light mt-4">
+            <p class="small mb-0">© 2026 DevSite</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- MODAL GLOBAL -->
+    <div class="modal-overlay" id="modalCredito">
+
+        <div class="card custom-modal shadow-lg border-0 position-relative mx-auto">
+
+            <div class="close-container">
+                <i class="fa-solid fa-xmark fa-lg"></i>
+            </div>
+
+            <div class="icon-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#83431a"
+                    class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                    <path
+                        d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
+                </svg>
+            </div>
+
+            <h3 class="fw-bold text-brand mb-0" style="letter-spacing: -0.5px;">
+                Gracias por aplicar
+            </h3>
+
+            <div class="bg-light-cream rounded-3 p-3 text-center">
+                <p class="mb-0 text-brand" style="font-size: 0.95rem; font-weight: 500;">
+                    No pudimos validar tu historial crediticio en este momento.<br>
+                    Por favor, inténtalo más tarde.
+                </p>
+            </div>
+
+            <button class="btn btn-danger btn-custom-red">
+                Volver al inicio
+            </button>
+
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>

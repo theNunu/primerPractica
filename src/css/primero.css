@@ -1,12 +1,59 @@
-.icon-circulo {
-  width: 140px;
-  height: 140px;
-}
+/* para el modal si funciona*/
 
-.tarjeta_uno {
-    background-color: rgb(108, 108, 220);
+.custom-modal {
+        font-family: 'Arial', sans-serif;
+        width: 100%;
+        max-width: 540px; /* Más ancho */
+        border-radius: 15px !important;
+        background-color: #fff;
+        padding: 15px 25px 30px 25px; /* Reducido arriba (15px) */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-      border-radius: 15px; /* Redondea las cuatro esquinas */
-  border: 1px solid #ccc; /* Opcional: añade un borde visible */
-  padding: 20px;
-}
+    /* La X bien pegada a la esquina */
+    .close-container {
+        position: absolute;
+        top: 12px;
+        right: 15px;
+        color: #ccc;
+        cursor: pointer;
+        line-height: 1;
+    }
+
+    /* Icono de advertencia más pegado al borde superior */
+    .icon-circle {
+        width: 65px;
+        height: 65px;
+        background-color: #fffdf2;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5px; /* Ajuste para subirlo más */
+        margin-bottom: 10px; /* Menos espacio con el título */
+    }
+
+    .text-brand {
+        color: #83431a; /* El café oscuro de la imagen */
+    }
+
+    /* Caja de texto compacta */
+    .bg-light-cream {
+        background-color: #fffdf5;
+        border: 1px solid #f9f1d8;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
+
+    .btn-custom-red {
+        background-color: #d31a24;
+        border: none;
+        padding: 12px;
+        border-radius: 8px;
+        width: 100%;
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
