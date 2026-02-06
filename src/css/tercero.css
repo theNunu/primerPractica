@@ -1,0 +1,115 @@
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.6);
+    display: block;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+   
+}
+
+.custom-modal {
+        margin-top: 90px; /* Empuja el hijo hacia abajo */
+        font-family: 'Arial', sans-serif;
+        width: 100%;
+        max-width: 540px; /* Más ancho */
+        border-radius: 15px !important;
+        background-color: #fff;
+        padding: 15px 25px 30px 25px; /* Reducido arriba (15px) */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* La X bien pegada a la esquina */
+    .close-container {
+        position: absolute;
+        top: 12px;
+        right: 15px;
+        color: #ccc;
+        cursor: pointer;
+        line-height: 1;
+    }
+
+    /* Icono de advertencia más pegado al borde superior */
+
+
+    .text-brand {
+        color: #83431a; /* El café oscuro de la imagen */
+    }
+
+    /* Caja de texto compacta */
+    .bg-light-cream {
+        background-color: #fffdf5;
+        border: 1px solid #f9f1d8;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
+
+    .btn-custom-red {
+        background-color: #d31a24;
+        border: none;
+        padding: 12px;
+        border-radius: 8px;
+        width: 100%;
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+    /*......................................................................................*/
+  /* Estilos Base del Modal */
+.custom-modal {
+    width: 100%;
+    max-width: 540px;
+    border-radius: 20px !important;
+    padding: 20px 30px 35px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-circle {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* SUCCESS */
+.icon-success { background-color: #eafaf0; color: #20bc51; }
+.text-success-title { color: #1e7e34; }
+.bg-success-desc { background-color: #f1fbf5; border: 1px solid #d4f3e2; color: #1e7e34; }
+.btn-success { background-color: #1e7e34; border: none; color: white; }
+
+/* WARNING / ACTIVE */
+.icon-warning { background-color: #fffdf2; color: #a0522d; }
+.text-warning-title { color: #83431a; }
+.bg-warning-desc { background-color: #fffdf5; border: 1px solid #f9f1d8; color: #83431a; }
+.btn-warning-custom { background-color: #d31a24; border: none; color: white; }
+
+/* ERROR / FAILURE */
+.icon-error { background-color: #fdecec; color: #d73333; }
+.text-error-title { color: #a71d2a; }
+.bg-error-desc { background-color: #fdecec; border: 1px solid #f5c2c7; color: #842029; }
+.btn-error { background-color: #d73333; border: none; color: white; }
+
+/* Botón General */
+.modal-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.close-container {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+    color: #bbb;
+}
