@@ -9,18 +9,18 @@
    
 }
 
-.custom-modal {
-        margin-top: 90px; /* Empuja el hijo hacia abajo */
+/* .custom-modal {
+        margin-top: 90px; 
         font-family: 'Arial', sans-serif;
         width: 100%;
-        max-width: 540px; /* Más ancho */
+        max-width: 540px; 
         border-radius: 15px !important;
         background-color: #fff;
-        padding: 15px 25px 30px 25px; /* Reducido arriba (15px) */
+        padding: 15px 25px 30px 25px; 
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
+    } */
 
     /* La X bien pegada a la esquina */
     .close-container {
@@ -35,9 +35,6 @@
     /* Icono de advertencia más pegado al borde superior */
 
 
-    .text-brand {
-        color: #83431a; /* El café oscuro de la imagen */
-    }
 
     /* Caja de texto compacta */
     .bg-light-cream {
@@ -48,15 +45,7 @@
         margin-bottom: 25px;
     }
 
-    .btn-custom-red {
-        background-color: #d31a24;
-        border: none;
-        padding: 12px;
-        border-radius: 8px;
-        width: 100%;
-        font-weight: 600;
-        font-size: 1.1rem;
-    }
+
     /*......................................................................................*/
   /* Estilos Base del Modal */
 .custom-modal {
