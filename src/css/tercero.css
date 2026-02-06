@@ -113,3 +113,18 @@
     cursor: pointer;
     color: #bbb;
 }
+
+/* Botón Verde Sólido para Verificación Exitosa */
+.btn-success-solid {
+    background-color: #008744;
+    border: none;
+    color: white;
+}
+
+/* Ajuste para éxito alternativo (verde más claro) */
+.icon-success-alt { background-color: #eafaf0; color: #20bc51; }
+.text-success-alt-title { color: #20bc51; }
+.bg-success-alt-desc { background-color: #f1fbf5; border: 1px solid #d4f3e2; }
+
+/* Texto negro simple */
+.text-dark { color: #212529 !important; }

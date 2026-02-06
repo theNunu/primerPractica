@@ -35,6 +35,8 @@
 
             <h3 id="modalTitle" class="fw-bold mb-2"></h3>
 
+            <p id="modalExtraDesc" class="text-dark mb-3 d-none" style="font-size: 0.95rem;"></p>
+
             <div id="modalDescBox" class="rounded-3 p-3 text-center mb-4">
                 <p id="modalDesc" class="mb-0" style="font-size:0.95rem; font-weight:500;"></p>
             </div>
@@ -44,43 +46,70 @@
     </div>
 
     <div class="p-5">
-        <button class="btn btn-success" onclick="levantarModal('success')">Ver Éxito</button>
-        <button class="btn btn-warning" onclick="levantarModal('warning')">Ver Advertencia</button>
-        <button class="btn btn-danger" onclick="levantarModal('error')">Ver Error</button>
+        <button class="btn btn-success" onclick="levantarModal('success_store')">Ver exito</button>
+        <button class="btn btn-warning" onclick="levantarModal('warning_inactive')">Ver Advertencia</button>
+        <button class="btn btn-danger" onclick="levantarModal('error_validation')">Ver Error</button>
+        <button class="btn btn-success" onclick="levantarModal('success_check')">Ver Éxito</button>
+
+
+        <!-- <button class="btn btn-warning" onclick="levantarModal('warning_inactive')">Ver1</button> -->
+
     </div>
 
     <script>
         const modalConfig = {
-            success: {
-                // icon: 'fa-solid fa-circle-check fa-3x',
-                icon: 'fa-solid fa-circle-exclamation fa-3x',
+            // 1. CASO: VERIFICACIÓN EXITOSA (Imagen abajo-izquierda)
+            success_check: {
+                icon: 'fa-solid fa-circle-check fa-3x',
                 iconClass: 'icon-success',
-                title: 'Gracias por aplicar',
-                titleClass: 'text-success-title',
-                desc: 'Tu Crédito Deprati está activo y puedes usarlo en tiendas App y en deprati.com.',
-                descBoxClass: 'bg-success-desc',
-                btnText: 'Ir a la tienda',
-                btnClass: 'btn-success'
+                title: '¡Verificación exitosa!',
+                titleClass: 'text-dark',
+                extraDesc: '', // No tiene texto extra arriba
+                desc: 'Tu número de celular ha sido verificado correctamente',
+                descBoxClass: '', // SIN FONDO
+                descTextClass: 'text-dark',
+                btnText: 'Continuar',
+                btnClass: 'btn-success-solid'
             },
-            warning: {
+            // 2. CASO: VERIFICACIÓN FALLIDA (Imagen abajo-derecha)
+            error_validation: {
+                // icon: 'fa-solid fa-circle-xmark fa-3x',
+                icon: 'fa-solid fa-circle-exclamation fa-3x',
+                iconClass: 'icon-error',
+                title: 'Verificación fallida',
+                titleClass: 'text-dark',
+                extraDesc: 'El código ingresado no es válido', // TEXTO NEGRO EXTRA
+                desc: 'Por favor, verifica el código e inténtalo de nuevo. Te quedan 2 intentos.',
+                descBoxClass: 'bg-error-desc', // CAJA ROJA
+                descTextClass: 'text-desc-error',
+                btnText: 'Intentar nuevamente',
+                btnClass: 'btn-error'
+            },
+            // 3. CASO: ADVERTENCIA / INACTIVO (Imagen arriba-izquierda)
+            warning_inactive: {
                 icon: 'fa-solid fa-circle-exclamation fa-3x',
                 iconClass: 'icon-warning',
                 title: 'Gracias por aplicar',
                 titleClass: 'text-warning-title',
-                desc: 'Tu Crédito Deprati se encuentra inactivo o bloqueado.Para más información, escribenos por WhatsApp al 0979461435.',
+                extraDesc: '',
+                desc: 'Tu Crédito De Prati se encuentra inactivo o bloqueado. Para más información, escríbenos por WhatsApp al 0979403435',
                 descBoxClass: 'bg-warning-desc',
+                descTextClass: 'text-desc-warning',
                 btnText: 'Volver al inicio',
                 btnClass: 'btn-warning-custom'
             },
-            error: {
-                icon: 'fa-solid fa-circle-xmark fa-3x',
-                iconClass: 'icon-error',
-                title: 'Verificación fallida',
-                titleClass: 'text-error-title',
-                desc: 'Por favor, verifica el código e inténtalo de nuevo. Te quedan 2 intentos.',
-                descBoxClass: 'bg-error-desc',
-                btnText: 'Intentar nuevamente',
-                btnClass: 'btn-error'
+            // 4. CASO: ÉXITO TIENDA (Imagen arriba-derecha)
+            success_store: {
+                icon: 'fa-solid fa-circle-check fa-3x',
+                iconClass: 'icon-success-alt',
+                title: 'Gracias por aplicar',
+                titleClass: 'text-success-alt-title',
+                extraDesc: '',
+                desc: 'Tu Crédito De Prati está activo y puedes usarlo en tiendas, App y en deprati.com',
+                descBoxClass: 'bg-success-alt-desc',
+                descTextClass: 'text-success-alt-title',
+                btnText: 'Ir a la tienda',
+                btnClass: 'btn-warning-custom' // Usa el rojo de la imagen
             }
         };
 
@@ -88,29 +117,43 @@
             const config = modalConfig[type];
             if (!config) return;
 
-            // 1. Configurar Icono
+            // 1. Icono
             const iconBox = document.getElementById('modalIconBox');
             const iconI = document.getElementById('modalIconI');
-            iconBox.className = 'icon-circle ' + config.iconClass;
+            iconBox.className = 'icon-circle ' + (config.iconClass || '');
             iconI.className = config.icon;
 
-            // 2. Configurar Título
+            // 2. Título
             const title = document.getElementById('modalTitle');
             title.textContent = config.title;
-            title.className = 'fw-bold mb-2 ' + config.titleClass;
+            title.className = 'fw-bold mb-2 ' + (config.titleClass || '');
 
-            // 3. Configurar Descripción
+            // 3. Descripción Extra (Texto negro opcional)
+            const extraDesc = document.getElementById('modalExtraDesc');
+            if (config.extraDesc) {
+                extraDesc.textContent = config.extraDesc;
+                extraDesc.classList.remove('d-none');
+            } else {
+                extraDesc.classList.add('d-none');
+            }
+
+            // 4. Caja de Descripción Principal
             const descBox = document.getElementById('modalDescBox');
             const descText = document.getElementById('modalDesc');
             descText.textContent = config.desc;
-            descBox.className = 'rounded-3 p-3 text-center mb-4 ' + config.descBoxClass;
+            descText.className = 'mb-0 ' + (config.descTextClass || '');
 
-            // 4. Configurar Botón
+            // Si no hay clase de caja, quitamos bordes y fondos (queda transparente)
+            descBox.className = config.descBoxClass
+                ? 'rounded-3 p-3 text-center mb-4 ' + config.descBoxClass
+                : 'p-2 text-center mb-4'; // Caso de verificación exitosa
+
+            // 5. Botón
             const btn = document.getElementById('modalBtn');
             btn.textContent = config.btnText;
-            btn.className = 'modal-btn ' + config.btnClass;
+            btn.className = 'modal-btn ' + (config.btnClass || '');
 
-            // 5. Mostrar
+            // Mostrar
             document.getElementById('miModal').style.display = 'flex';
         }
 
@@ -121,7 +164,7 @@
         // carga el model succs por defecto
         document.addEventListener('DOMContentLoaded', () => {
 
-            levantarModal('success');
+            levantarModal('success_check');
         });
 
     </script>
