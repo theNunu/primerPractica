@@ -167,6 +167,17 @@
             levantarModal('success_check');
         });
 
+        // NUEVA FUNCIONALIDAD: Cerrar al hacer clic en el fondo
+        const modalOverlay = document.getElementById('miModal');
+
+        modalOverlay.addEventListener('click', function (event) {
+            // Si el clic fue directamente en el fondo (overlay) 
+            // y NO en la tarjeta (custom-modal) o sus hijos:
+            if (event.target === modalOverlay) {
+                ocultarModal();
+            }
+        });
+
     </script>
 
 </body>
