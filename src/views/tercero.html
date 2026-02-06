@@ -41,6 +41,8 @@
                 <p id="modalDesc" class="mb-0" style="font-size:0.95rem; font-weight:500;"></p>
             </div>
 
+            <p id="modalTimer" class="fw-bold mb-3 d-none" style="color: #8da2b5; font-size: 1.1rem;"></p>
+
             <button id="modalBtn" class="modal-btn" onclick="ocultarModal()"></button>
         </div>
     </div>
@@ -49,7 +51,11 @@
         <button class="btn btn-success" onclick="levantarModal('success_store')">Ver exito</button>
         <button class="btn btn-warning" onclick="levantarModal('warning_inactive')">Ver Advertencia</button>
         <button class="btn btn-danger" onclick="levantarModal('error_validation')">Ver Error</button>
-        <button class="btn btn-success" onclick="levantarModal('success_check')">Ver Éxito</button>
+        <button class="btn btn-success" onclick="levantarModal('success_check')">Ver Éxito 2</button>
+
+        <button class="btn btn-secondary" onclick="levantarModal('limit_reached_locked')">Ver Límite
+            (Bloqueado)</button>
+        <button class="btn btn-dark" onclick="levantarModal('limit_reached_ready')">Ver Límite (Habilitado)</button>
 
 
         <!-- <button class="btn btn-warning" onclick="levantarModal('warning_inactive')">Ver1</button> -->
@@ -110,6 +116,59 @@
                 descTextClass: 'text-success-alt-title',
                 btnText: 'Ir a la tienda',
                 btnClass: 'btn-warning-custom' // Usa el rojo de la imagen
+            },
+
+            // limit_reached: {
+            //     icon: 'fa-solid fa-circle-exclamation fa-3x',
+            //     iconClass: 'icon-warning', // Mismo estilo de advertencia
+            //     title: 'Límite de intentos alcanzado',
+            //     titleClass: 'text-warning-title',
+            //     extraDesc: '',
+            //     desc: 'Por favor, espera 5 minutos para volver a intentarlo. Tendrás 3 intentos adicionales disponibles.',
+            //     descBoxClass: 'bg-warning-desc',
+            //     descTextClass: 'text-warning-brand',
+            //     // Propiedades nuevas para este modal
+            //     showTimer: true,
+            //     timerValue: '(4:56)',
+            //     btnText: 'Volver a intentarlo',
+            //     btnClass: 'btn-disabled', // Empezamos deshabilitado (gris)
+            //     isBtnDisabled: true
+            // }
+
+            // CASO: Límite alcanzado - Botón Gris y con tiempo (4:56)
+            limit_reached_locked: {
+                icon: 'fa-solid fa-circle-exclamation fa-3x',
+                iconClass: 'icon-warning',
+                title: 'Límite de intentos alcanzado',
+                 titleClass: 'text-warning-title',
+                // titleClass: 'text-warning-brand',
+                extraDesc: '',
+                desc: 'Por favor, espera 5 minutos para volver a intentarlo. Tendrás 3 intentos adicionales disponibles.',
+                descBoxClass: 'bg-warning-desc',
+                descTextClass: 'text-warning-brand',
+                showTimer: true,
+                timerValue: '(4:56)', //
+                btnText: 'Volver a intentarlo',
+                btnClass: 'btn-disabled', // Clase para el color gris
+                isBtnDisabled: true // Propiedad para bloquear el clic
+            },
+
+            // CASO: Límite alcanzado - Botón Rojo y tiempo en cero (0:00)
+            limit_reached_ready: {
+                icon: 'fa-solid fa-circle-exclamation fa-3x',
+                iconClass: 'icon-warning',
+                title: 'Límite de intentos alcanzado',
+                // titleClass: 'text-warning-brand',
+                 titleClass: 'text-warning-title',
+                extraDesc: '',
+                desc: 'Por favor, espera 5 minutos para volver a intentarlo. Tendrás 3 intentos adicionales disponibles.',
+                descBoxClass: 'bg-warning-desc',
+                descTextClass: 'text-warning-brand',
+                showTimer: true,
+                timerValue: '(0:00)', //
+                btnText: 'Volver a intentarlo',
+                btnClass: 'btn-warning-custom', // Regresa al rojo
+                isBtnDisabled: false // Ya se puede cliquear
             }
         };
 
@@ -148,10 +207,30 @@
                 ? 'rounded-3 p-3 text-center mb-4 ' + config.descBoxClass
                 : 'p-2 text-center mb-4'; // Caso de verificación exitosa
 
+
+
             // 5. Botón
+            // const btn = document.getElementById('modalBtn');
+            // btn.textContent = config.btnText;
+            // btn.className = 'modal-btn ' + (config.btnClass || '');
+
+            // 6. LÓGICA DE TIEMPO Y BOTÓN (Especial para Límite de Intentos)
+            const timerElem = document.getElementById('modalTimer');
             const btn = document.getElementById('modalBtn');
+
+            if (config.showTimer) {
+                timerElem.textContent = config.timerValue;
+                timerElem.classList.remove('d-none');
+            } else {
+                timerElem.classList.add('d-none');
+            }
+
+            // Configuración del botón
             btn.textContent = config.btnText;
+            btn.disabled = config.isBtnDisabled || false; // Bloquea el clic si es true
             btn.className = 'modal-btn ' + (config.btnClass || '');
+
+            document.getElementById('miModal').style.display = 'flex';
 
             // Mostrar
             document.getElementById('miModal').style.display = 'flex';

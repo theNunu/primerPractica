@@ -117,3 +117,18 @@
 
 /* Texto negro simple */
 .text-dark { color: #212529 !important; }
+
+
+/* Botón deshabilitado (Gris como en la imagen) */
+.btn-disabled {
+    background-color: #b3b3b3 !important;
+    color: #ffffff !important;
+    cursor: not-allowed;
+    border: none;
+}
+
+/* El color del reloj es un azul grisáceo sutil */
+#modalTimer {
+    color: #8da2b5;
+    letter-spacing: 1px;
+}
