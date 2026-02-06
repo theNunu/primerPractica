@@ -86,7 +86,7 @@
 .btn-success { background-color: #1e7e34; border: none; color: white; }
 
 /* WARNING / ACTIVE */
-.icon-warning { background-color: #fffdf2; color: #a0522d; }
+.icon-warning { background-color: #f4e9ab; color: #a0522d; }
 .text-warning-title { color: #83431a; }
 .bg-warning-desc { background-color: #fffdf5; border: 1px solid #f9f1d8; color: #83431a; }
 .btn-warning-custom { background-color: #d31a24; border: none; color: white; }
